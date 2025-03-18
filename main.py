@@ -41,7 +41,7 @@ def retrieve_object_metadata():
     # opp_id = request.args.get('oppId')
 
     if not opp_id:
-        return "Missing leadId parameter", 400
+        return "Missing oppId parameter", 400
 
     access_token, error = generate_token()
     print(f"{access_token}")
