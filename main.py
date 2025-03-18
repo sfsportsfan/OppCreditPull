@@ -37,8 +37,8 @@ def generate_pdf(html_content, output_path="credit_report.pdf"):
 
 @app.route('/', methods=['GET', 'POST'])
 def retrieve_object_metadata():
-    opp_id = '006Ro00000K1fC5'
-    # opp_id = request.args.get('oppId')
+    # opp_id = '006Ro00000K1fC5'
+    opp_id = request.args.get('oppId')
 
     if not opp_id:
         return "Missing oppId parameter", 400
@@ -187,5 +187,5 @@ def retrieve_object_metadata():
     return credit_report_html
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5023)
+    app.run()
 
