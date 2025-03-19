@@ -67,6 +67,7 @@ def retrieve_object_metadata():
     contact_response = requests.get(URL + f'/services/data/v62.0/sobjects/Contact/{contact_id}', headers=headers)
     contact_data = contact_response.json()
 
+    print(contact_data)
 
     contact = {
         "first_name": contact_data.get("FirstName", ""),
