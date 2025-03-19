@@ -37,7 +37,7 @@ def generate_pdf(html_content, output_path="credit_report.pdf"):
 
 @app.route('/', methods=['GET', 'POST'])
 def retrieve_object_metadata():
-    # opp_id = '006Ro00000K1fC5'
+    # opp_id = '006Ro00000KH4dCIAT'
     opp_id = request.args.get('oppId')
 
     if not opp_id:
@@ -185,7 +185,7 @@ def retrieve_object_metadata():
         "Amount_Past_Due__c": amount_past_due,
     }
 
-    post_credit_data = requests.patch(URL + f'/services/data/v62.0/sobjects/Lead/{opp_id}', json=credit_data,
+    post_credit_data = requests.patch(URL + f'/services/data/v62.0/sobjects/Opportunity/{opp_id}', json=credit_data,
                                       headers=headers)
 
     return credit_report_html
