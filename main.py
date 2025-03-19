@@ -53,6 +53,9 @@ def retrieve_object_metadata():
 
     # Retrieve lead data using Salesforce API
     response = requests.get(URL + f'/services/data/v62.0/sobjects/Opportunity/{opp_id}', headers=headers)
+    opp_data = response.json()
+
+    print(opp_data)
 
     if response.status_code != 200:
         return f"Error fetching Lead data: {response.status_code} {response.text}", 400
